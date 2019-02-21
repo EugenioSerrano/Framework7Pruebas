@@ -1,0 +1,56 @@
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+.apdisk
+
+# Windows
+MyApp/ehthumbs.db
+MyApp/ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# iOS Platform
+MyApp/platforms/ios/build/
+MyApp/platforms/ios/www/
+MyApp/platforms/ios/cordova/console.log
+*.xcuserdatad
+
+# Android Platform
+MyApp/platforms/android/.gradle
+MyApp/platforms/android/build
+MyApp/platforms/android/assets/www
+MyApp/platforms/android/local.properties
+MyApp/platforms/android/CordovaLib/build
+MyApp/platforms/android/CordovaLib/gen
+MyApp/platforms/android/CordovaLib/local.properties
+
+# wp8
+MyApp/platforms/wp8/bin
+MyApp/platforms/wp8/obj
+MyApp/platforms/wp8/www
+MyApp/platforms/wp8/.staging
+MyApp/platforms/wp8/*.suo
+MyApp/platforms/wp8/*.csproj.user
+
+# Windows Universal App (Windows Platform)
+MyApp/platforms/windows/build
+MyApp/platforms/windows/www
+MyApp/platforms/windows/AppPackages
+
+# Browser
+MyApp/platforms/browser/www
+
+# res
+MyApp/resources/signing
