@@ -4,11 +4,13 @@ document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady() {
 
 
-    initDatabase();
+    //initDatabase();
     
-    alert('Hola Hola Mundo');
+    //alert('Hola Mundo');
 
     //alert(navigator.camera);    
+
+    openCamera();
 }
 
 

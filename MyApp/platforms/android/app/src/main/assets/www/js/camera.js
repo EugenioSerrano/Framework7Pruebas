@@ -1,8 +1,26 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        console.log(navigator.camera);
-    }
+document.addEventListener("deviceready",onDeviceReady,false);
 
+
+function onDeviceReady() {
+
+
+    //initDatabase();
+    
+    //alert('Hola Mundo');
+
+    //alert(navigator.camera);    
+
+    openCamera();
+}
+
+
+function initDatabase() {
+    database = window.sqlitePlugin.openDatabase({name: 'sample.db', location: 'default'});
+
+    database.transaction(function(transaction) {
+        transaction.executeSql('CREATE TABLE SampleTable (name, score)');
+    });
+}
 
 function setOptions(srcType) {
     var options = {
