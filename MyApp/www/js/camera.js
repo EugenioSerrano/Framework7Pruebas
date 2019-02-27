@@ -2,9 +2,23 @@ document.addEventListener("deviceready",onDeviceReady,false);
 
 
 function onDeviceReady() {
-    alert(navigator.camera);    
+
+
+    initDatabase();
+    
+    alert('Hola Hola Mundo');
+
+    //alert(navigator.camera);    
 }
 
+
+function initDatabase() {
+    database = window.sqlitePlugin.openDatabase({name: 'sample.db', location: 'default'});
+
+    database.transaction(function(transaction) {
+        transaction.executeSql('CREATE TABLE SampleTable (name, score)');
+    });
+}
 
 function setOptions(srcType) {
     var options = {
