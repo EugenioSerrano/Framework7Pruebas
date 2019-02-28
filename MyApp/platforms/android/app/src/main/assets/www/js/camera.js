@@ -8,9 +8,9 @@ function onDeviceReady() {
     
     //alert('Hola Mundo');
 
-    //alert(navigator.camera);    
+    // alert(navigator.camera);    
 
-    openCamera();
+    // openCamera();
 }
 
 
@@ -60,4 +60,20 @@ function displayImage(imgUri) {
 
     var elem = document.getElementById('imageFile');
     elem.src = imgUri;
+}
+
+function createNewFileEntry(imgUri) {
+    window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function success(dirEntry) {
+
+        // JPEG file
+        dirEntry.getFile("tempFile.jpeg", { create: true, exclusive: false }, function (fileEntry) {
+
+            // Do something with it, like write to it, upload it, etc.
+            // writeFile(fileEntry, imgUri);
+            console.log("got file: " + fileEntry.fullPath);
+            // displayFileData(fileEntry.fullPath, "File copied to");
+
+        }, onErrorCreateFile);
+
+    }, onErrorResolveUrl);
 }
