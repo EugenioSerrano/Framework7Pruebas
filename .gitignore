@@ -30,11 +30,13 @@ MyApp/platforms/ios/cordova/console.log
 # Android Platform
 MyApp/platforms/android/.gradle
 MyApp/platforms/android/build
+MyApp/platforms/android/app/build
 MyApp/platforms/android/assets/www
 MyApp/platforms/android/local.properties
 MyApp/platforms/android/CordovaLib/build
 MyApp/platforms/android/CordovaLib/gen
 MyApp/platforms/android/CordovaLib/local.properties
+
 
 # wp8
 MyApp/platforms/wp8/bin
