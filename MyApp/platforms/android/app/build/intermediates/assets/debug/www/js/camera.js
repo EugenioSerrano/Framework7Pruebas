@@ -1,8 +1,26 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        console.log(navigator.camera);
-    }
+document.addEventListener("deviceready",onDeviceReady,false);
 
+
+function onDeviceReady() {
+
+
+    //initDatabase();
+    
+    //alert('Hola Mundo');
+
+    // alert(navigator.camera);    
+
+    // openCamera();
+}
+
+
+function initDatabase() {
+    database = window.sqlitePlugin.openDatabase({name: 'sample.db', location: 'default'});
+
+    database.transaction(function(transaction) {
+        transaction.executeSql('CREATE TABLE SampleTable (name, score)');
+    });
+}
 
 function setOptions(srcType) {
     var options = {
@@ -42,4 +60,20 @@ function displayImage(imgUri) {
 
     var elem = document.getElementById('imageFile');
     elem.src = imgUri;
+}
+
+function createNewFileEntry(imgUri) {
+    window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function success(dirEntry) {
+
+        // JPEG file
+        dirEntry.getFile("tempFile.jpeg", { create: true, exclusive: false }, function (fileEntry) {
+
+            // Do something with it, like write to it, upload it, etc.
+            // writeFile(fileEntry, imgUri);
+            console.log("got file: " + fileEntry.fullPath);
+            // displayFileData(fileEntry.fullPath, "File copied to");
+
+        }, onErrorCreateFile);
+
+    }, onErrorResolveUrl);
 }
