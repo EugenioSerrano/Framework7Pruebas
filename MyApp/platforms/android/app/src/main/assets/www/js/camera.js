@@ -42,13 +42,14 @@ function openCamera(selection) {
 
     var srcType = Camera.PictureSourceType.CAMERA;
     var options = setOptions(srcType);
-    var func = createNewFileEntry;
+    //var func = createNewFileEntry;
 
-    navigator.camera.getPicture(function cameraSuccess(imageUri) {
+    navigator.camera.getPicture(
+        function cameraSuccess(imageUri) {
 
-        displayImage(imageUri);
+        //displayImage(imageUri);
         // You may choose to copy the picture, save it somewhere, or upload.
-        func(imageUri);
+        createNewFileEntry(imageUri);
 
     }, function cameraError(error) {
         console.debug("Unable to obtain picture: " + error, "app");
@@ -63,13 +64,15 @@ function displayImage(imgUri) {
 }
 
 function createNewFileEntry(imgUri) {
-    window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function success(dirEntry) {
+    window.resolveLocalFileSystemURL(
+        cordova.file.cacheDirectory, 
+        function success(dirEntry) {
 
         // JPEG file
         dirEntry.getFile("tempFile.jpeg", { create: true, exclusive: false }, function (fileEntry) {
 
             // Do something with it, like write to it, upload it, etc.
-            // writeFile(fileEntry, imgUri);
+            writeFile(fileEntry, imgUri);
             console.log("got file: " + fileEntry.fullPath);
             // displayFileData(fileEntry.fullPath, "File copied to");
 
