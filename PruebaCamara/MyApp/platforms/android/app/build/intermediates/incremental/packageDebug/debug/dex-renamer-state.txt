@@ -1,0 +1,4 @@
+#Wed Apr 10 19:34:49 ART 2019
+base.0=C\:\\GitHubRepos\\Framework7Pruebas\\MyApp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
